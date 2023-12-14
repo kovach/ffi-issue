@@ -2,6 +2,7 @@
 #include <lean/lean.h>
 
 extern uint64_t my_length(lean_obj_arg);
+extern uint64_t my_num;
 
 // see https://leanprover.github.io/lean4/doc/dev/ffi.html#initialization
 extern void lean_initialize_runtime_module();
@@ -29,4 +30,5 @@ int main() {
   lean_object * s = lean_mk_string("hello!");
   uint64_t l = my_length(s);
   printf("output: %ld\n", l);
+  printf("output my_num: %ld\n", my_num);
 }
